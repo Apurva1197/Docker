@@ -8,7 +8,7 @@ RUN apt update
 RUN apt install apache2 unzip -y
 RUN rm -rf /var/www/html/index.html
 #we are copying source code from local storage
-COPY Todoist-win32-9.7.2.zip /var/www/html/oxer.zip
+COPY Todoist-win32-9.7.2.zip /var/www/html/.zip
 #we are moving to /var/www/html
 WORKDIR /var/www/html
 #we are unzipping and extracting the source code in default deployment enviornment location
