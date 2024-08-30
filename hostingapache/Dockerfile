@@ -12,7 +12,7 @@ COPY Todoist-win32-9.7.2.zip /var/www/html/oxer.zip
 #we are moving to /var/www/html
 WORKDIR /var/www/html
 #we are unzipping and extracting the source code in default deployment enviornment location
-RUN unzip .zipTodoist-win32-9.7.2.zip
+RUN unzip Todoist-win32-9.7.2.zip
 RUN mv oxer-html/* .
 #we are exposing our container to a port
 EXPOSE 80
