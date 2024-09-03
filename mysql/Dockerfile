@@ -6,10 +6,10 @@ MAINTAINER baeldung.com
 RUN chown -R mysql:root /var/lib/mysql/
 
 
-ENV MYSQL_DATABASE=database1
-ENV MYSQL_USER=apurva
-ENV MYSQL_PASSWORD=apurva1197
-ENV MYSQL_ROOT_PASSWORD=apurva1197
+# ENV MYSQL_DATABASE=database1
+# ENV MYSQL_USER=apurva
+# ENV MYSQL_PASSWORD=apurva1197
+# ENV MYSQL_ROOT_PASSWORD=apurva1197
 
 COPY student.sql /etc/mysql/student.sql
 
