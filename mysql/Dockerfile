@@ -5,8 +5,8 @@ LABEL database="studentapp"
 ENV MYSQL_ROOT_PASSWORD=12345678
 
 COPY student.sql /docker-entrypoint-initdb.d/
-
-CMD /bin/bash
+EXPOSE 3306
+CMD ["mysqld"]
 
 
 
