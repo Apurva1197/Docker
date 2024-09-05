@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microservices Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+         body {
+            padding-top: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            margin: 10px;
+        }
+
+        .microservice-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .microservice-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Microservices Dashboard</h1>
+        <div class="column">
+            <!-- Microservice Buttons -->
+            <div class="col-md-4">
+                <button class="btn btn-primary btn-custom" onclick="showContent('seasonswitcher')">seasonswitcher</button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary btn-custom" onclick="showContent('podcastsbless')">podcastsbless</button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary btn-custom" onclick="showContent('puppy')">puppy</button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary btn-custom" onclick="showContent('counter')">counter</button>
+            </div>
+        </div>
+
+        <!-- Microservice Content Sections -->
+        <div id="seasonswitcher" class="microservice-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">seasonswitcher</h5>
+                    <iframe src="http://13.232.187.253:32768/seasonswitcher" style="width: 100%; height: 400px; border: none;"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div id="podcastsbless" class="microservice-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">podcastsbless</h5>
+                    <iframe src="http://13.232.187.253:32769/podcastsbless" style="width: 100%; height: 400px; border: none;"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div id="puppy" class="microservice-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">puppy</h5>
+                    <iframe src="http://13.232.187.253:32770/puppy" style="width: 100%; height: 400px; border: none;"></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="counter" class="microservice-content">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">counter</h5>
+                    <iframe src="http://13.232.187.253:32771/counter" style="width: 100%; height: 400px; border: none;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(serviceId) {
+            // Hide all microservice content sections
+            var contents = document.querySelectorAll('.microservice-content');
+            contents.forEach(function (content) {
+                content.classList.remove('active');
+            });
+
+            // Show the selected microservice content section
+            var selectedContent = document.getElementById(serviceId);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
