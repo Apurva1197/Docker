@@ -1,16 +1,17 @@
 services:  #services syntax comples the creation of cont from img via docfile , assigns network , assigns volumes as well.
   nginxfrontendconone:
-      build: /opt/Docker/dockercomposeup/puppy
+      build: puppy/
       ports: 
-          - '81:81'
-      #network_mode: bridge
+          - "82:80"
+      network_mode: bridge
       container_name: static
       volumes: 
          - myapp:/usr/share/nginx/html/
   nginxfrontendcontwo:
-      build: /opt/Docker/dockercomposeup/counter
-      #ports: - "81:81"
-      #network_mode: host
+      build: counter/
+      ports: 
+          - "81:80"
+      network_mode: bridge
       volumes: 
         - myapp2:/usr/share/nginx/html/ 
       container_name: static2
