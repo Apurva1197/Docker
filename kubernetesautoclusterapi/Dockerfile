@@ -16,7 +16,7 @@ RUN dotnet restore KubernetesAutoClusterAPI/KubernetesAutoClusterAPI.csproj
 COPY . .
 
 # Build the application
-RUN dotnet build kubernetesautoClusterapi/kubernetesautoClusterapi.csproj -c Release -o /app/build
+RUN dotnet build kubernetesautoclusterapi/kubernetesautoClusterapi.csproj -c Release -o /app/build
 
 # Publish the application
 RUN dotnet publish kubernetesautoclusterapi/kubernetesautoClusterapi.csproj -c Release -o /app/publish
