@@ -16,10 +16,10 @@ RUN dotnet restore KubernetesAutoClusterAPI/KubernetesAutoClusterAPI.csproj
 COPY . .
 
 # Build the application
-RUN dotnet build KubernetesAutoClusterAPI/KubernetesAutoClusterAPI.csproj -c Release -o /app/build
+RUN dotnet build kubernetesautoClusterapi/kubernetesautoClusterapi.csproj -c Release -o /app/build
 
 # Publish the application
-RUN dotnet publish KubernetesAutoClusterAPI/KubernetesAutoClusterAPI.csproj -c Release -o /app/publish
+RUN dotnet publish kubernetesautoclusterapi/kubernetesautoClusterapi.csproj -c Release -o /app/publish
 
 # Use the official .NET runtime image to run the application
 # This image contains only the .NET runtime, making it lighter
@@ -32,4 +32,4 @@ WORKDIR /app
 COPY --from=build /app/publish .
 
 # Set the entry point for the application
-ENTRYPOINT ["dotnet", "KubernetesAutoClusterAPI.dll"]
+ENTRYPOINT ["dotnet", "kubernetesautoclusterapi.dll"]
